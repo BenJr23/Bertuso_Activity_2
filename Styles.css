@@ -1,0 +1,180 @@
+/* Define CSS variables for font sizes at the root level */
+:root {
+    --h1-font-size: 3.9rem;
+    --p-font-size: 2.0rem;
+    --h2-font-size: 1.7rem;
+    --text-font-size: 1.2rem;
+}
+
+/* Global Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+/* First Section: Header Section */
+.header-section {
+    display: flex;
+    padding: 20px;
+    background-color: black; 
+    color: white; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.image-container {
+    width: 30%; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    animation: fade-in 1s ease-in-out forwards; 
+}
+
+.profile-picture {
+    width: 247.5px;  
+    height: 247.5px; 
+    border: 5px solid white;
+    object-fit: cover;
+}
+
+.name-section {
+    width: 70%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    text-align: left;
+    animation: fade-in 1s ease-in-out forwards; 
+}
+
+.name-section h1 {
+    font-size: var(--h1-font-size); 
+    margin-bottom: 5px;
+    color: white;
+}
+
+.name-section p {
+    font-size: var(--p-font-size); 
+    color: white; 
+}
+
+/* Second Section: Two Columns */
+.main-content {
+    display: flex;
+    margin: 0;
+    
+}
+
+.left-column {
+    background-color: black;
+    color: white;
+    width: 35%;
+    padding: 20px;
+    
+}
+
+.right-column {
+    width: 65%;
+    padding: 20px;
+}
+
+.left-column h2{
+    font-size: var(--h2-font-size);
+    margin-bottom: 10px;
+    border-bottom: 2px solid #fff;
+    animation: slide-in 1s ease-in-out forwards;
+
+} 
+
+.right-column h2 {
+    font-size: var(--h2-font-size);
+    margin-bottom: 10px;
+    border-bottom: 2px solid #fff;
+    animation: slide-in-right 1s ease-in-out forwards;
+}
+
+.left-column ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.left-column ul li {
+    margin-bottom: 10px;
+    font-size: var(--text-font-size);
+    animation: slide-in 1s ease-in-out forwards; 
+}
+
+.right-column p {
+    margin-bottom: 15px;
+    font-size: var(--text-font-size); 
+    animation: slide-in-right 1s ease-in-out forwards;
+}
+
+/* Footer Styling */
+footer {
+    background-color: gray; 
+    color: white; 
+    padding: 20px;
+    text-align: center;
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+.footer.show {
+    opacity: 1; /* Make it visible */
+    transform: translateY(0); /* Move it to its original position */
+    animation: fade-in-footer 0.5s ease forwards; /* Apply fade-in animation */
+}
+
+.footer-content p {
+    margin: 5px 0; 
+    font-size: var(--text-font-size); 
+}
+
+/* Animation intro */
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation of footer */
+@keyframes fade-in-footer {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End in original position */
+    }
+}
+
